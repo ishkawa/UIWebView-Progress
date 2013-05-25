@@ -31,7 +31,8 @@ pod 'UIWebView+Progress', :git => 'git@github.com:ishkawa/UIWebView-Progress.git
 
 ### Without CocoaPods 
 
-Add files under `UIWebView+Progress/` to your Xcode project.
+- Install [NJKWebViewProgress](https://github.com/ninjinkun/NJKWebViewProgress) and [ISMethodSwizzling](https://github.com/ishkawa/ISMethodSwizzling).
+- Add files under `UIWebView+Progress/` to your Xcode project.
 
 ## License
 
