@@ -3,7 +3,6 @@
 #import <objc/runtime.h>
 
 static const char NJKProgressProxyKey;
-static const char NJKWebViewProxyDelegateKey;
 
 @interface UIWebView () <UIWebViewDelegate>
 
@@ -66,16 +65,6 @@ static const char NJKWebViewProxyDelegateKey;
     self.progressProxy.progressDelegate = progressDelegate;
 }
 
-- (id <UIWebViewDelegate>)webViewProxyDelegate
-{
-    return objc_getAssociatedObject(self, &NJKWebViewProxyDelegateKey);
-}
-
-- (void)setWebViewProxyDelegate:(id<UIWebViewDelegate>)webViewProxyDelegate
-{
-    objc_setAssociatedObject(self, &NJKWebViewProxyDelegateKey, webViewProxyDelegate, OBJC_ASSOCIATION_ASSIGN);
-}
-
 - (float)progress
 {
     return self.progressProxy.progress;
@@ -83,13 +72,13 @@ static const char NJKWebViewProxyDelegateKey;
 
 - (id <UIWebViewDelegate>)_delegate
 {
-    return self.webViewProxyDelegate;
+    return self.progressProxy.webViewProxyDelegate;
 }
 
 - (void)_setDelegate:(id<UIWebViewDelegate>)delegate
 {
     if ([self _delegate] && delegate != self.progressProxy) {
-        self.webViewProxyDelegate = delegate;
+        self.progressProxy.webViewProxyDelegate = delegate;
         return;
     }
     [self _setDelegate:delegate];
