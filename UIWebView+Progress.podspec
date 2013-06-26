@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
   s.name         = "UIWebView+Progress"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "integrates NJKWebViewProgress into UIWebView."
   s.homepage     = "https://github.com/ishkawa/UIWebView-Progress"
   s.author       = { "Yosuke Ishikawa" => "y@ishkawa.org" }
-  s.source       = { :git => "https://github.com/ishkawa/UIWebView-Progress.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/ishkawa/UIWebView-Progress.git", :tag => "0.0.2" }
   s.platform     = :ios, '5.0'
   s.requires_arc = true
   s.source_files = 'UIWebView+Progress/**/*.{h,m}'
